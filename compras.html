@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Compras</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Lista de compras</h1>
+    <div class="listas">
+        <ul>
+            <h2>Produtos a comprar</h2>
+            <li>Arroz</li>
+            <li>Feijão</li>
+            <li>Macarrão</li>
+            <li>Carne</li>
+            <li>Frango</li>
+            <li>Leite</li>
+            <li>Ovos</li>
+            <li>Verduras</li>
+            <li>Frutas</li>
+            <li>Pães</li>
+        </ul>
+    </div>
+
+    <div class="listas">
+        <ul>
+            <h2>Ja no carrinho</h2>
+        </ul>
+    </div>
+    
+
+    <button id="btnComprar">Comprar</button>
+
+    <script>
+        document.getElementById('btnComprar').onclick = function() {
+            const items = Array.from(document.querySelectorAll('ul li')).map(li => li.textContent);
+            alert('Lista: ' + items.join(', '));
+        };
+    </script>
+
+    <script src="compras.js"></script>
+</body>
+</html>
