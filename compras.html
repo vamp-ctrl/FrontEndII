@@ -3,38 +3,34 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Compras</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Lista de Compras</title>
+    <link rel="stylesheet" href="./style.css">
 </head>
 <body>
-    <h1>Lista de compras</h1>
-    <div>
-        <h2>Produtos a comprar</h2>
-        <ul>
-            <li onclick="addToCart(this)">Arroz</li>
-            <li onclick="addToCart(this)">Feijão</li>
-            <li onclick="addToCart(this)">Macarrão</li>
-            <li onclick="addToCart(this)">Carne</li>
-            <li onclick="addToCart(this)">Frango</li>
-            <li onclick="addToCart(this)">Leite</li>
-            <li onclick="addToCart(this)">Ovos</li>
-            <li onclick="addToCart(this)">Cereal</li>
-            <li onclick="addToCart(this)">Verduras</li>
-            <li onclick="addToCart(this)">Frutas</li>
-            <li id="pao" onclick="addToCart(this)">Pães</li>
+    <h1>🛒 Lista de Compras</h1>
+    <div class="container">
+        <ul id="prodAComp">
+            <h2>Produtos a comprar</h2>
+            <li>Frango</li>
+            <li>Peixe</li>
+            <li>Lasanha</li>
+            <li>Macarrão</li>
+            <li>Alface</li>
+            <li>Tomate</li>
+            <li>Sal</li>
+            <li>Limão</li>
+            <li>Arroz</li>
+            <li id="pao">Pães</li>
         </ul>
-    </div>
-
-    <input type="text" placeholder="Digite algo aqui: ">
-    <p>Sua busca: </p>
     
-    <div class="listas">
-        <h2>Minha lista de compras</h2>
-        <ul id="proAdd">
+        <ul id="prodAdd">
+            <h2>Produtos já no carrinho</h2>
         </ul>
     </div>
+    
+        <input type="text" placeholder="Digite um produto aqui">
+    <p></p>
 
-    <button id="btnComprar">Comprar</button>
     <script src="compras.js"></script>
 </body>
 </html>
