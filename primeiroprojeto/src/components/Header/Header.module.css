@@ -1,27 +1,91 @@
 .header {
-    height: 100px;
-    padding: 10px;
-}
-
-.ulMenu {
+    background: #4b0082;
+    padding: 15px 30px;
     display: flex;
     justify-content: center;
-    gap: 20px;
-    font-size: 22px;
-}
-
-.ulSubMenu {
-    font-size: 18px;
-    padding-left: 10px;
-    max-width: 0;
-    overflow: hidden;
-}
-
-.liMenu, .liSubMenu{
-    list-style-type: none;
-}
-
-.link:hover {
-    color: #4b0082;
+    align-items: center;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+  
+  .ulMenu {
+    display: flex;
+    gap: 30px;
+    font-size: 20px;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .liMenu,
+  .liSubMenu {
+    list-style: none;
+    position: relative;
+  }
+  
+  .link {
+    text-decoration: none;
+    color: #fff;
+    font-weight: 500;
     transition: 0.3s;
-}
+  }
+  
+  .link:hover {
+    color: #ffd700;
+  }
+  
+  .ulSubMenu {
+    position: absolute;
+    top: 35px;
+    left: 0;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    padding: 10px 0;
+    min-width: 160px;
+    display: none;
+    flex-direction: column;
+  }
+  
+  .liMenu:hover .ulSubMenu {
+    display: flex;
+  }
+  
+  .liSubMenu {
+    padding: 8px 15px;
+  }
+  
+  .liSubMenu .link {
+    color: #4b0082;
+  }
+  
+  .liSubMenu .link:hover {
+    color: #6a0dad;
+    text-decoration: underline;
+  }
+
+@media (max-width: 768px) {
+    .header {
+      padding: 10px 15px;
+    }
+  
+    .ulMenu {
+      gap: 15px;
+      font-size: 16px;
+    }
+  
+    .ulSubMenu {
+      top: 30px;
+      min-width: 140px;
+    }
+  
+    .liSubMenu {
+      padding: 6px 10px;
+    }
+
+    .header1 {
+      flex-direction: column;
+      display: none;
+    }
+  }
