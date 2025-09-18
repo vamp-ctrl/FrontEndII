@@ -1,91 +1,153 @@
-.header {
-    background: #4b0082;
-    padding: 15px 30px;
-    display: flex;
+.header1 {
+  background: #4b0082; /* Cor de fundo roxo */
+  padding: 15px 30px; /* Espaçamento interno (vertical 15px, horizontal 30px) */
+  display: flex; /* Flexbox para alinhar os itens */
+  justify-content: center; /* Centraliza horizontalmente os itens */
+  align-items: center; /* Centraliza verticalmente os itens */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Sombra embaixo do header */
+  position: sticky; /* Fixa o header no topo quando rola */
+  top: 0; /* Cola no topo da página */
+  z-index: 100; /* Camada acima do conteúdo (evita que algo cubra o header) */
+}
+
+.ulMenu {
+  display: flex; /* Deixa os itens em linha (horizontal) */
+  gap: 30px; /* Espaço entre os itens da lista */
+  font-size: 20px; /* Tamanho da fonte dos links */
+  margin: 0; /* Remove margem padrão da <ul> */
+  padding: 0; /* Remove padding padrão da <ul> */
+}
+
+.liMenu,
+.liSubMenu {
+  list-style: none; /* Remove bolinhas da lista */
+  position: relative; /* Permite posicionar submenus em relação ao pai */
+}
+
+.link {
+  text-decoration: none; /* Remove sublinhado dos links */
+  color: #fff; /* Cor do texto branca */
+  font-weight: 500; /* Peso da fonte (meio negrito) */
+  transition: 0.3s; /* Suaviza efeitos de hover (0.3 segundos) */
+}
+
+.link:hover {
+  color: #4b0082; /* No hover, troca a cor do link para roxo */
+}
+
+.ulSubMenu {
+  position: absolute; /* Posiciona relativo ao li pai */
+  top: 35px; /* Desce 35px abaixo do item pai */
+  left: 0; /* Alinha à esquerda do item pai */
+  background: #fff; /* Fundo branco para submenu */
+  border-radius: 8px; /* Cantos arredondados */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* Sombra para destacar */
+  padding: 10px 0; /* Espaçamento interno vertical */
+  min-width: 160px; /* Largura mínima do submenu */
+  display: none; /* Escondido por padrão */
+  flex-direction: column; /* Itens do submenu em coluna */
+}
+
+.liMenu:hover .ulSubMenu {
+  display: flex; /* Exibe submenu quando passa o mouse no item pai */
+}
+
+.liSubMenu {
+  padding: 8px 15px; /* Espaçamento interno em cada item do submenu */
+}
+
+.liSubMenu .link {
+  color: #4b0082; /* Cor roxa no submenu */
+}
+
+.liSubMenu .link:hover {
+  color: #6a0dad; /* Tom mais claro de roxo no hover */
+  text-decoration: underline; /* Sublinha quando passa o mouse */
+}
+
+/* --- MOBILE --- */
+@media (max-width: 767px) {
+  /* Aplica apenas em telas menores que 768px */
+  .header1 {
+    display: none; /* Esconde o header desktop no mobile */
+  }
+
+  /* Header mobile */
+  .header2 {
+    background: #4b0082; /* Fundo roxo */
+    padding: 15px 30px; /* Espaçamento interno */
+    display: flex; /* Flexbox para alinhar */
+    align-items: center; /* Alinha itens ao centro verticalmente */
+    justify-content: space-between; /* Espaço entre os itens (hambúrguer à direita/esquerda) */
+    top: 0; /* Cola no topo */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Sombra */
+  }
+
+  /* Botão hambúrguer */
+  .buttonMenu {
+    width: 35px; /* Largura do botão */
+    height: 30px; /* Altura do botão */
+    position: relative; /* Necessário para posicionar as barrinhas */
+    cursor: pointer; /* Cursor de mãozinha */
+    display: flex; /* Flex para centralizar */
     justify-content: center;
     align-items: center;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-    position: sticky;
+    background: none; /* Sem fundo (transparente) */
+    border: none; /* Remove borda padrão */
+    z-index: 200; /* Mantém sobre o menu */
+  }
+
+  .buttonMenu span {
+    position: absolute; /* Barrinhas posicionadas dentro do botão */
+    width: 100%; /* Ocupa toda a largura do botão */
+    height: 4px; /* Espessura da barrinha */
+    background: #fff; /* Barrinhas brancas */
+    border-radius: 2px; /* Pontas arredondadas */
+    transition: 0.4s; /* Transição suave ao virar X */
+  }
+
+  .buttonMenu span:nth-child(1) {
     top: 0;
-    z-index: 100;
-  }
-  
-  .ulMenu {
-    display: flex;
-    gap: 30px;
-    font-size: 20px;
-    margin: 0;
-    padding: 0;
-  }
-  
-  .liMenu,
-  .liSubMenu {
-    list-style: none;
-    position: relative;
-  }
-  
-  .link {
-    text-decoration: none;
-    color: #fff;
-    font-weight: 500;
-    transition: 0.3s;
-  }
-  
-  .link:hover {
-    color: #ffd700;
-  }
-  
-  .ulSubMenu {
-    position: absolute;
-    top: 35px;
-    left: 0;
-    background: #fff;
-    border-radius: 8px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-    padding: 10px 0;
-    min-width: 160px;
-    display: none;
-    flex-direction: column;
-  }
-  
-  .liMenu:hover .ulSubMenu {
-    display: flex;
-  }
-  
-  .liSubMenu {
-    padding: 8px 15px;
-  }
-  
-  .liSubMenu .link {
-    color: #4b0082;
-  }
-  
-  .liSubMenu .link:hover {
-    color: #6a0dad;
-    text-decoration: underline;
+  } /* Primeira barrinha no topo */
+  .buttonMenu span:nth-child(2) {
+    top: 13px;
+  } /* Segunda barrinha no meio */
+  .buttonMenu span:nth-child(3) {
+    bottom: 0;
+  } /* Terceira barrinha embaixo */
+
+  /* estado ativo (vira X) */
+  .buttonMenu.active span:nth-child(1) {
+    transform: rotate(45deg); /* Roda a primeira barrinha */
+    top: 13px; /* Move para o meio */
   }
 
-@media (max-width: 768px) {
-    .header {
-      padding: 10px 15px;
-    }
-  
-    .ulMenu {
-      gap: 15px;
-      font-size: 16px;
-    }
-  
-    .ulSubMenu {
-      top: 30px;
-      min-width: 140px;
-    }
-  
-    .liSubMenu {
-      padding: 6px 10px;
-    }
-
-    .header1 {
-      flex-direction: column;
-      display: none;
-    }
+  .buttonMenu.active span:nth-child(2) {
+    opacity: 0; /* Some com a barrinha do meio */
   }
+
+  .buttonMenu.active span:nth-child(3) {
+    transform: rotate(-45deg); /* Roda a barrinha de baixo */
+    bottom: 13px; /* Move para o meio */
+  }
+
+  /* Menu mobile */
+  .menuHamb {
+    display: none; /* Escondido por padrão */
+    background: linear-gradient(135deg, #f8f8ff, #e6e6fa); /* Degradê claro */
+    padding: 20px; /* Espaçamento interno */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Sombra */
+  }
+
+  .menuHamb.open {
+    display: block; /* Mostra o menu quando ativo */
+  }
+}
+
+/* --- DESKTOP --- */
+@media (min-width: 768px) {
+  /* Para telas grandes */
+  .header2 {
+    display: none; /* Esconde o header mobile */
+  }
+}
