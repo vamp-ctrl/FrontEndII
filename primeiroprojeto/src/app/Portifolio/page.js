@@ -1,15 +1,3 @@
-// import styles from "./produtos.module.css";
-
-// export default function Produtos() {
-//   return (
-//     <div>
-//       <h1>Produtos</h1>
-//       <p>Lista de produtos</p>
-//     </div>
-//   );
-// }
-
-
 import styles from "./produtos.module.css";
 import Link from "next/link";
 
@@ -22,9 +10,9 @@ export default function Produtos() {
       link: "https://github.com/vamp-ctrl/Acaiteria",
     },
     {
-      titulo: "Favor Fest",
+      titulo: "Flavor Fest",
       descricao: "Site de receitas com login, comentários e avaliações.",
-      link: "https://github.com/vamp-ctrl/FavorFest",
+      link: "https://github.com/vamp-ctrl/FlavorFest",
     },
     {
       titulo: "Universo Harry Potter",

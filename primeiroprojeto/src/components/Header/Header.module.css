@@ -32,7 +32,7 @@
 }
 
 .link:hover {
-  color: #4b0082; /* No hover, troca a cor do link para roxo */
+  color: #bab2c0; /* No hover, troca a cor do link para roxo */
 }
 
 .ulSubMenu {
@@ -61,7 +61,7 @@
 }
 
 .liSubMenu .link:hover {
-  color: #6a0dad; /* Tom mais claro de roxo no hover */
+  color: #8825ce; /* Tom mais claro de roxo no hover */
   text-decoration: underline; /* Sublinha quando passa o mouse */
 }
 

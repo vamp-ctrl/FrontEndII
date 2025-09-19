@@ -3,44 +3,229 @@
   background: linear-gradient(135deg, #f8f8ff, #e6e6fa);
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
-  text-align: center;
-  padding: 40px;
+  padding: 40px 20px;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  transition: background 0.5s ease;
 }
 
 .h1 {
-  font-size: 2.5em;
+  font-size: 2.7em;
+  color: #4b0082;
+  margin: 20px 0;
+  text-align: center;
+  text-shadow: 1px 1px 3px rgba(106,13,173,0.4);
+}
+
+.sectionTitle {
+  font-size: 2em;
   color: #4b0082;
   margin-bottom: 20px;
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  text-align: center;
+  text-shadow: 1px 1px 2px rgba(106,13,173,0.2);
+}
+
+.counter {
+  font-size: 1.3em;
+  color: #333;
+  font-weight: 600;
+  margin-bottom: 30px;
 }
 
 .buttons {
   display: flex;
   gap: 15px;
-  margin-bottom: 20px;
+  margin-bottom: 25px;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 .button {
   background: #4b0082;
   color: #fff;
   border: none;
-  padding: 12px 20px;
-  border-radius: 10px;
+  padding: 12px 22px;
+  border-radius: 12px;
   cursor: pointer;
   font-size: 1em;
   font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 8px;
   transition: all 0.3s ease;
+  text-decoration: none;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
 }
 
 .button:hover {
   background: #6a0dad;
   transform: scale(1.05);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
 }
 
-.counter {
-  font-size: 1.2em;
+.inputFiltro {
+  width: 100%;
+  max-width: 400px;
+  padding: 12px 15px;
+  border-radius: 12px;
+  border: 2px solid #4b0082;
+  font-size: 1em;
+  margin-bottom: 20px;
+  outline: none;
+  background-color: #f5f5ff;
   color: #333;
-  font-weight: 600;
+  transition: all 0.3s;
+}
+
+.inputFiltro:focus {
+  border-color: #6a0dad;
+  box-shadow: 0 0 10px rgba(106, 13, 173, 0.3);
+  background-color: #fff;
+}
+
+.addMateria {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 25px;
+  width: 100%;
+  max-width: 700px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.addMateria input {
+  flex: 1;
+  padding: 12px 15px;
+  border-radius: 12px;
+  border: 2px solid #4b0082;
+  font-size: 1em;
+  outline: none;
+  background-color: #f5f5ff;
+  color: #333;
+  transition: all 0.3s;
+}
+
+.addMateria input:focus {
+  border-color: #6a0dad;
+  box-shadow: 0 0 10px rgba(106, 13, 173, 0.3);
+  background-color: #fff;
+}
+
+.addMateria button {
+  padding: 12px 20px;
+  border-radius: 12px;
+  font-weight: 500;
+  border: none;
+  background: #4b0082;
+  color: #fff;
+  cursor: pointer;
+  transition: all 0.3s;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+.addMateria button:hover {
+  background: #6a0dad;
+  transform: scale(1.05);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+}
+
+.cardsContainer {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 20px;
+  width: 100%;
+}
+
+.card {
+  background: #fff;
+  border-radius: 15px;
+  padding: 20px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  transition: transform 0.3s, box-shadow 0.3s, background 0.3s;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.card:hover {
+  transform: translateY(-5px) scale(1.02);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
+
+.card h3 {
+  color: #6a0dad;
+  margin-bottom: 12px;
+  font-size: 1.4em;
+}
+
+.card ul {
+  list-style: none;
+  padding: 0;
+  width: 100%;
+}
+
+.card li {
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+}
+
+.card a {
+  color: #4b0082;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+.card a:hover {
+  color: #6a0dad;
+  text-decoration: underline;
+}
+
+/* ===== Botões de link interno ===== */
+.card button {
+  margin-top: 5px;
+  background: #4b0082;
+  color: #fff;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s;
+  font-size: 0.9em;
+}
+
+.card button:hover {
+  background: #6a0dad;
+  transform: scale(1.05);
+}
+
+/* ===== Barra de progresso ===== */
+.progress {
+  width: 100%;
+  background: #eee;
+  height: 10px;
+  border-radius: 5px;
+  overflow: hidden;
+  margin-top: 10px;
+}
+
+.progress-bar {
+  height: 100%;
+  background: #6a0dad;
+  width: 0%;
+  transition: width 0.5s ease;
+}
+
+.cardsContainer p {
+  text-align: center;
+  color: #555;
+  font-size: 1em;
+  grid-column: 1/-1;
 }
